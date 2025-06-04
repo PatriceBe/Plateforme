@@ -1,0 +1,1002 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Liste de Toutes les Informations</title>
+  <style>
+    body {
+      margin: 0;
+      background: #f0f0f0;
+      font-family: Arial, sans-serif;
+    }
+    .container {
+      margin: 20px;
+      text-align: center;
+    }
+    h2 {
+      font-size: 1.8em;
+      color: #333;
+      margin-bottom: 20px;
+    }
+    .excel-grid {
+      display: grid;
+      grid-template-columns: 150px 150px 120px 120px 150px 150px 150px 150px 150px 150px 150px 150px 240px 240px 120px 120px 150px;
+      grid-template-rows: 61.8px repeat(48, 30px);
+      gap: 2px;
+      background: #ccc;
+      margin: 0 auto;
+      max-width: 2610px;
+    }
+    .excel-grid div {
+      background: #fff;
+      border: 1px solid #ddd;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      padding: 5px;
+      text-align: center;
+      min-width: 120px;
+    }
+    .excel-grid .header {
+      background: #d3d3d3;
+      font-weight: bold;
+      text-align: center;
+    }
+    /* Style pour la colonne adresse (13ème colonne) */
+    .excel-grid div:nth-child(17n + 13) {
+      text-align: left;
+      justify-content: flex-start;
+      padding-left: 10px;
+      min-width: 240px;
+    }
+    /* Style pour la colonne contact (14ème colonne) */
+    .excel-grid div:nth-child(17n + 14) {
+      text-align: left;
+      justify-content: flex-start;
+      padding-left: 10px;
+      min-width: 240px;
+    }
+    /* Style pour la colonne date_commande (16ème colonne) */
+    .excel-grid div:nth-child(17n + 16) {
+      text-align: left;
+      justify-content: flex-start;
+      padding-left: 10px;
+      min-width: 120px;
+    }
+    .return-button {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: #28a745; /* Vert comme Thaliesium */
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px; /* Espace entre la loupe et le texte */
+      transition: background 0.3s ease;
+    }
+    .return-button:hover {
+      background: #218838; /* Vert plus foncé au survol */
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Liste de Toutes les Informations</h2>
+    <div class="excel-grid">
+      <div class="header">nom_produit</div>
+      <div class="header">categorie</div>
+      <div class="header">prix_unitaire</div>
+      <div class="header">stock_actuel</div>
+      <div class="header">type</div>
+      <div class="header">famille</div>
+      <div class="header">genre</div>
+      <div class="header">especes</div>
+      <div class="header">nom_scientifique</div>
+      <div class="header">partie_comestible</div>
+      <div class="header">nom_client</div>
+      <div class="header">nom_organisation</div>
+      <div class="header">adresse</div>
+      <div class="header">contact</div>
+      <div class="header">telephone</div>
+      <div class="header">date_commande</div>
+      <div class="header">nom_fournisseur</div>
+      
+      <!-- Commande 1 (2 produits) -->
+      <div>Carottes</div>
+      <div>Légumes</div>
+      <div>1.50</div>
+      <div>100</div>
+      <div>Annuel</div>
+      <div>Apiaceae</div>
+      <div>Daucus</div>
+      <div>carota</div>
+      <div>Daucus carota</div>
+      <div>Racine</div>
+      <div>Marie Tremblay</div>
+      <div>Épicerie Verte</div>
+      <div>123 Rue Saint-Laurent, Montreal, QC H2X 1Y3, Canada</div>
+      <div>marie.tremblay@epicerieverte.com</div>
+      <div>+1 514 123 4567</div>
+      <div>2025-01-10</div>
+      <div>Ferme des Lilas</div>
+      
+      <div>Tomates</div>
+      <div>Légumes</div>
+      <div>3.00</div>
+      <div>80</div>
+      <div>Annuel</div>
+      <div>Solanaceae</div>
+      <div>Solanum</div>
+      <div>lycopersicum</div>
+      <div>Solanum lycopersicum</div>
+      <div>Fruit</div>
+      <div>Marie Tremblay</div>
+      <div>Épicerie Verte</div>
+      <div>123 Rue Saint-Laurent, Montreal, QC H2X 1Y3, Canada</div>
+      <div>marie.tremblay@epicerieverte.com</div>
+      <div>+1 514 123 4567</div>
+      <div>2025-01-10</div>
+      <div>AgriBio SARL</div>
+      
+      <!-- Commande 2 (1 produit) -->
+      <div>Laitues</div>
+      <div>Légumes</div>
+      <div>1.20</div>
+      <div>150</div>
+      <div>Annuel</div>
+      <div>Asteraceae</div>
+      <div>Lactuca</div>
+      <div>sativa</div>
+      <div>Lactuca sativa</div>
+      <div>Feuilles</div>
+      <div>Sophie Gagnon</div>
+      <div></div>
+      <div>78 Boulevard des Laurentides, Laval, QC H7G 2T3, Canada</div>
+      <div>sophie.gagnon@email.com</div>
+      <div>+1 450 345 6789</div>
+      <div>2025-01-15</div>
+      <div>Les Jardins de Provence</div>
+      
+      <!-- Commande 3 (3 produits) -->
+      <div>Pommes de terre</div>
+      <div>Légumes</div>
+      <div>2.00</div>
+      <div>200</div>
+      <div>Annuel</div>
+      <div>Solanaceae</div>
+      <div>Solanum</div>
+      <div>tuberosum</div>
+      <div>Solanum tuberosum</div>
+      <div>Tubercule</div>
+      <div>Émilie Roy</div>
+      <div>Coop Aliments Sains</div>
+      <div>123 Rue Saint-Jean, Longueuil, QC J4H 2Y3, Canada</div>
+      <div>emilie.roy@coopaliment.com</div>
+      <div>+1 450 567 8901</div>
+      <div>2025-01-20</div>
+      <div>Ferme du Nord</div>
+      
+      <div>Concombres</div>
+      <div>Légumes</div>
+      <div>1.80</div>
+      <div>90</div>
+      <div>Annuel</div>
+      <div>Cucurbitaceae</div>
+      <div>Cucumis</div>
+      <div>sativus</div>
+      <div>Cucumis sativus</div>
+      <div>Fruit</div>
+      <div>Émilie Roy</div>
+      <div>Coop Aliments Sains</div>
+      <div>123 Rue Saint-Jean, Longueuil, QC J4H 2Y3, Canada</div>
+      <div>emilie.roy@coopaliment.com</div>
+      <div>+1 450 567 8901</div>
+      <div>2025-01-20</div>
+      <div>BioFerme Québec</div>
+      
+      <div>Oignons</div>
+      <div>Légumes</div>
+      <div>1.00</div>
+      <div>120</div>
+      <div>Bisannuel</div>
+      <div>Amaryllidaceae</div>
+      <div>Allium</div>
+      <div>cepa</div>
+      <div>Allium cepa</div>
+      <div>Bulbe</div>
+      <div>Émilie Roy</div>
+      <div>Coop Aliments Sains</div>
+      <div>123 Rue Saint-Jean, Longueuil, QC J4H 2Y3, Canada</div>
+      <div>emilie.roy@coopaliment.com</div>
+      <div>+1 450 567 8901</div>
+      <div>2025-01-20</div>
+      <div>Les Champs d’Or</div>
+      
+      <!-- Commande 4 (2 produits) -->
+      <div>Poivrons</div>
+      <div>Légumes</div>
+      <div>2.50</div>
+      <div>70</div>
+      <div>Annuel</div>
+      <div>Solanaceae</div>
+      <div>Capsicum</div>
+      <div>annuum</div>
+      <div>Capsicum annuum</div>
+      <div>Fruit</div>
+      <div>Jean Dupont</div>
+      <div>Restaurant La Fourchette</div>
+      <div>45 Rue Sainte-Foy, Québec, QC G1R 1S9, Canada</div>
+      <div>jean.dupont@lafourchette.com</div>
+      <div>+1 418 234 5678</div>
+      <div>2025-01-25</div>
+      <div>Verger de la Loire</div>
+      
+      <div>Radis</div>
+      <div>Légumes</div>
+      <div>0.80</div>
+      <div>200</div>
+      <div>Annuel</div>
+      <div>Brassicaceae</div>
+      <div>Raphanus</div>
+      <div>raphanistrum</div>
+      <div>Raphanus raphanistrum</div>
+      <div>Racine</div>
+      <div>Jean Dupont</div>
+      <div>Restaurant La Fourchette</div>
+      <div>45 Rue Sainte-Foy, Québec, QC G1R 1S9, Canada</div>
+      <div>jean.dupont@lafourchette.com</div>
+      <div>+1 418 234 5678</div>
+      <div>2025-01-25</div>
+      <div>Ferme Verte</div>
+      
+      <!-- Commande 5 (1 produit) -->
+      <div>Courgettes</div>
+      <div>Légumes</div>
+      <div>2.20</div>
+      <div>60</div>
+      <div>Annuel</div>
+      <div>Cucurbitaceae</div>
+      <div>Cucurbita</div>
+      <div>pepo</div>
+      <div>Cucurbita pepo</div>
+      <div>Fruit</div>
+      <div>Anne Lavoie</div>
+      <div>Restaurant Le Jardin</div>
+      <div>89 Boulevard Charest, Québec, QC G1K 3G5, Canada</div>
+      <div>anne.lavoie@lejardin.com</div>
+      <div>+1 418 789 0123</div>
+      <div>2025-02-01</div>
+      <div>AgriCoop Normandie</div>
+      
+      <!-- Commande 6 (3 produits) -->
+      <div>Carottes</div>
+      <div>Légumes</div>
+      <div>1.50</div>
+      <div>100</div>
+      <div>Annuel</div>
+      <div>Apiaceae</div>
+      <div>Daucus</div>
+      <div>carota</div>
+      <div>Daucus carota</div>
+      <div>Racine</div>
+      <div>Luc Martin</div>
+      <div>Marché Bio</div>
+      <div>15 Rue Principale, Gatineau, QC J8Y 3M5, Canada</div>
+      <div>luc.martin@marchebio.com</div>
+      <div>+1 819 456 7890</div>
+      <div>2025-02-05</div>
+      <div>Les Terres Fertiles</div>
+      
+      <div>Laitues</div>
+      <div>Légumes</div>
+      <div>1.20</div>
+      <div>150</div>
+      <div>Annuel</div>
+      <div>Asteraceae</div>
+      <div>Lactuca</div>
+      <div>sativa</div>
+      <div>Lactuca sativa</div>
+      <div>Feuilles</div>
+      <div>Luc Martin</div>
+      <div>Marché Bio</div>
+      <div>15 Rue Principale, Gatineau, QC J8Y 3M5, Canada</div>
+      <div>luc.martin@marchebio.com</div>
+      <div>+1 819 456 7890</div>
+      <div>2025-02-05</div>
+      <div>Ferme du Soleil Levant</div>
+      
+      <div>Tomates</div>
+      <div>Légumes</div>
+      <div>3.00</div>
+      <div>80</div>
+      <div>Annuel</div>
+      <div>Solanaceae</div>
+      <div>Solanum</div>
+      <div>lycopersicum</div>
+      <div>Solanum lycopersicum</div>
+      <div>Fruit</div>
+      <div>Luc Martin</div>
+      <div>Marché Bio</div>
+      <div>15 Rue Principale, Gatineau, QC J8Y 3M5, Canada</div>
+      <div>luc.martin@marchebio.com</div>
+      <div>+1 819 456 7890</div>
+      <div>2025-02-05</div>
+      <div>Les Champs de Wallonie</div>
+      
+      <!-- Commande 7 (1 produit) -->
+      <div>Pommes de terre</div>
+      <div>Légumes</div>
+      <div>2.00</div>
+      <div>200</div>
+      <div>Annuel</div>
+      <div>Solanaceae</div>
+      <div>Solanum</div>
+      <div>tuberosum</div>
+      <div>Solanum tuberosum</div>
+      <div>Tubercule</div>
+      <div>Thomas Bergeron</div>
+      <div>Épicerie Locale</div>
+      <div>34 Avenue Papineau, Montreal, QC H2K 4J7, Canada</div>
+      <div>thomas.bergeron@epicerielocale.com</div>
+      <div>+1 514 890 1234</div>
+      <div>2025-02-10</div>
+      <div>Maple Farms</div>
+      
+      <!-- Commande 8 (2 produits) -->
+      <div>Concombres</div>
+      <div>Légumes</div>
+      <div>1.80</div>
+      <div>90</div>
+      <div>Annuel</div>
+      <div>Cucurbitaceae</div>
+      <div>Cucumis</div>
+      <div>sativus</div>
+      <div>Cucumis sativus</div>
+      <div>Fruit</div>
+      <div>Marc Bélanger</div>
+      <div>Marché des Saveurs</div>
+      <div>67 Avenue des Érables, Trois-Rivières, QC G8T 5R1, Canada</div>
+      <div>marc.belanger@marchedessaveurs.com</div>
+      <div>+1 819 012 3456</div>
+      <div>2025-02-15</div>
+      <div>Ferme des Étoiles</div>
+      
+      <div>Poivrons</div>
+      <div>Légumes</div>
+      <div>2.50</div>
+      <div>70</div>
+      <div>Annuel</div>
+      <div>Solanaceae</div>
+      <div>Capsicum</div>
+      <div>annuum</div>
+      <div>Capsicum annuum</div>
+      <div>Fruit</div>
+      <div>Marc Bélanger</div>
+      <div>Marché des Saveurs</div>
+      <div>67 Avenue des Érables, Trois-Rivières, QC G8T 5R1, Canada</div>
+      <div>marc.belanger@marchedessaveurs.com</div>
+      <div>+1 819 012 3456</div>
+      <div>2025-02-15</div>
+      <div>AgriNature</div>
+      
+      <!-- Commande 9 (3 produits) -->
+      <div>Oignons</div>
+      <div>Légumes</div>
+      <div>1.00</div>
+      <div>120</div>
+      <div>Bisannuel</div>
+      <div>Amaryllidaceae</div>
+      <div>Allium</div>
+      <div>cepa</div>
+      <div>Allium cepa</div>
+      <div>Bulbe</div>
+      <div>Antoine Côté</div>
+      <div></div>
+      <div>78 Rue Notre-Dame, Montreal, QC H2Y 1S6, Canada</div>
+      <div>antoine.cote@email.com</div>
+      <div>+1 514 234 5678</div>
+      <div>2025-02-20</div>
+      <div>Les Jardins de la Meuse</div>
+      
+      <div>Radis</div>
+      <div>Légumes</div>
+      <div>0.80</div>
+      <div>200</div>
+      <div>Annuel</div>
+      <div>Brassicaceae</div>
+      <div>Raphanus</div>
+      <div>raphanistrum</div>
+      <div>Raphanus raphanistrum</div>
+      <div>Racine</div>
+      <div>Antoine Côté</div>
+      <div></div>
+      <div>78 Rue Notre-Dame, Montreal, QC H2Y 1S6, Canada</div>
+      <div>antoine.cote@email.com</div>
+      <div>+1 514 234 5678</div>
+      <div>2025-02-20</div>
+      <div>Ferme des Prairies</div>
+      
+      <div>Courgettes</div>
+      <div>Légumes</div>
+      <div>2.20</div>
+      <div>60</div>
+      <div>Annuel</div>
+      <div>Cucurbitaceae</div>
+      <div>Cucurbita</div>
+      <div>pepo</div>
+      <div>Cucurbita pepo</div>
+      <div>Fruit</div>
+      <div>Antoine Côté</div>
+      <div></div>
+      <div>78 Rue Notre-Dame, Montreal, QC H2Y 1S6, Canada</div>
+      <div>antoine.cote@email.com</div>
+      <div>+1 514 234 5678</div>
+      <div>2025-02-20</div>
+      <div>Les Terres du Sud</div>
+      
+      <!-- Commande 10 (1 produit) -->
+      <div>Carottes</div>
+      <div>Légumes</div>
+      <div>1.50</div>
+      <div>100</div>
+      <div>Annuel</div>
+      <div>Apiaceae</div>
+      <div>Daucus</div>
+      <div>carota</div>
+      <div>Daucus carota</div>
+      <div>Racine</div>
+      <div>Pierre Lefebvre</div>
+      <div></div>
+      <div>56 Rue King Est, Sherbrooke, QC J1G 1A2, Canada</div>
+      <div>pierre.lefebvre@email.com</div>
+      <div>+1 819 678 9012</div>
+      <div>2025-02-25</div>
+      <div>Ferme Bio Alsace</div>
+      
+      <!-- Commande 11 (2 produits) -->
+      <div>Laitues</div>
+      <div>Légumes</div>
+      <div>1.20</div>
+      <div>150</div>
+      <div>Annuel</div>
+      <div>Asteraceae</div>
+      <div>Lactuca</div>
+      <div>sativa</div>
+      <div>Lactuca sativa</div>
+      <div>Feuilles</div>
+      <div>Chloé Beaudoin</div>
+      <div></div>
+      <div>23 Rue de la Paix, Brossard, QC J4Y 2L3, Canada</div>
+      <div>chloe.beaudoin@email.com</div>
+      <div>+1 450 901 2345</div>
+      <div>2025-03-01</div>
+      <div>Les Champs de Genève</div>
+      
+      <div>Tomates</div>
+      <div>Légumes</div>
+      <div>3.00</div>
+      <div>80</div>
+      <div>Annuel</div>
+      <div>Solanaceae</div>
+      <div>Solanum</div>
+      <div>lycopersicum</div>
+      <div>Solanum lycopersicum</div>
+      <div>Fruit</div>
+      <div>Chloé Beaudoin</div>
+      <div></div>
+      <div>23 Rue de la Paix, Brossard, QC J4Y 2L3, Canada</div>
+      <div>chloe.beaudoin@email.com</div>
+      <div>+1 450 901 2345</div>
+      <div>2025-03-01</div>
+      <div>Ferme de la Garonne</div>
+      
+      <!-- Commande 12 (2 produits) -->
+      <div>Pommes de terre</div>
+      <div>Légumes</div>
+      <div>2.00</div>
+      <div>200</div>
+      <div>Annuel</div>
+      <div>Solanaceae</div>
+      <div>Solanum</div>
+      <div>tuberosum</div>
+      <div>Solanum tuberosum</div>
+      <div>Tubercule</div>
+      <div>Julie Fortin</div>
+      <div>Restaurant Chez Julie</div>
+      <div>45 Rue des Lilas, Saguenay, QC G7H 5B2, Canada</div>
+      <div>julie.fortin@chezjulie.com</div>
+      <div>+1 418 123 4567</div>
+      <div>2025-03-05</div>
+      <div>AgriFlandre</div>
+      
+      <div>Concombres</div>
+      <div>Légumes</div>
+      <div>1.80</div>
+      <div>90</div>
+      <div>Annuel</div>
+      <div>Cucurbitaceae</div>
+      <div>Cucumis</div>
+      <div>sativus</div>
+      <div>Cucumis sativus</div>
+      <div>Fruit</div>
+      <div>Julie Fortin</div>
+      <div>Restaurant Chez Julie</div>
+      <div>45 Rue des Lilas, Saguenay, QC G7H 5B2, Canada</div>
+      <div>julie.fortin@chezjulie.com</div>
+      <div>+1 418 123 4567</div>
+      <div>2025-03-05</div>
+      <div>GreenFields Ontario</div>
+      
+      <!-- Commande 13 (1 produit) -->
+      <div>Poivrons</div>
+      <div>Légumes</div>
+      <div>2.50</div>
+      <div>70</div>
+      <div>Annuel</div>
+      <div>Solanaceae</div>
+      <div>Capsicum</div>
+      <div>annuum</div>
+      <div>Capsicum annuum</div>
+      <div>Fruit</div>
+      <div>Isabelle Morin</div>
+      <div>Épicerie du Village</div>
+      <div>456 Rue Saint-Jean, Longueuil, QC J4H 2Y3, Canada</div>
+      <div>isabelle.morin@epicerieduvillage.com</div>
+      <div>+1 450 345 6789</div>
+      <div>2025-03-10</div>
+      <div>Ferme des Oliviers</div>
+      
+      <!-- Commande 14 (2 produits) -->
+      <div>Oignons</div>
+      <div>Légumes</div>
+      <div>1.00</div>
+      <div>120</div>
+      <div>Bisannuel</div>
+      <div>Amaryllidaceae</div>
+      <div>Allium</div>
+      <div>cepa</div>
+      <div>Allium cepa</div>
+      <div>Bulbe</div>
+      <div>Valérie Bouchard</div>
+      <div></div>
+      <div>90 Boulevard Laurier, Québec, QC G1V 2L8, Canada</div>
+      <div>valerie.bouchard@email.com</div>
+      <div>+1 418 567 8901</div>
+      <div>2025-03-15</div>
+      <div>Les Jardins de Bretagne</div>
+      
+      <div>Radis</div>
+      <div>Légumes</div>
+      <div>0.80</div>
+      <div>200</div>
+      <div>Annuel</div>
+      <div>Brassicaceae</div>
+      <div>Raphanus</div>
+      <div>raphanistrum</div>
+      <div>Raphanus raphanistrum</div>
+      <div>Racine</div>
+      <div>Valérie Bouchard</div>
+      <div></div>
+      <div>90 Boulevard Laurier, Québec, QC G1V 2L8, Canada</div>
+      <div>valerie.bouchard@email.com</div>
+      <div>+1 418 567 8901</div>
+      <div>2025-03-15</div>
+      <div>Ferme des Montagnes</div>
+      
+      <!-- Commande 15 (3 produits) -->
+      <div>Carottes</div>
+      <div>Légumes</div>
+      <div>1.50</div>
+      <div>100</div>
+      <div>Annuel</div>
+      <div>Apiaceae</div>
+      <div>Daucus</div>
+      <div>carota</div>
+      <div>Daucus carota</div>
+      <div>Racine</div>
+      <div>Nathalie Roy</div>
+      <div>Marché Frais</div>
+      <div>789 Avenue des Cèdres, Gatineau, QC J9J 1T7, Canada</div>
+      <div>nathalie.roy@marchefrais.com</div>
+      <div>+1 819 789 0123</div>
+      <div>2025-03-20</div>
+      <div>AgriCoop Occitanie</div>
+      
+      <div>Courgettes</div>
+      <div>Légumes</div>
+      <div>2.20</div>
+      <div>60</div>
+      <div>Annuel</div>
+      <div>Cucurbitaceae</div>
+      <div>Cucurbita</div>
+      <div>pepo</div>
+      <div>Cucurbita pepo</div>
+      <div>Fruit</div>
+      <div>Nathalie Roy</div>
+      <div>Marché Frais</div>
+      <div>789 Avenue des Cèdres, Gatineau, QC J9J 1T7, Canada</div>
+      <div>nathalie.roy@marchefrais.com</div>
+      <div>+1 819 789 0123</div>
+      <div>2025-03-20</div>
+      <div>Les Champs de Bruges</div>
+      
+      <div>Tomates</div>
+      <div>Légumes</div>
+      <div>3.00</div>
+      <div>80</div>
+      <div>Annuel</div>
+      <div>Solanaceae</div>
+      <div>Solanum</div>
+      <div>lycopersicum</div>
+      <div>Solanum lycopersicum</div>
+      <div>Fruit</div>
+      <div>Nathalie Roy</div>
+      <div>Marché Frais</div>
+      <div>789 Avenue des Cèdres, Gatineau, QC J9J 1T7, Canada</div>
+      <div>nathalie.roy@marchefrais.com</div>
+      <div>+1 819 789 0123</div>
+      <div>2025-03-20</div>
+      <div>Harvest Farms</div>
+      
+      <!-- Commande 16 (1 produit) -->
+      <div>Laitues</div>
+      <div>Légumes</div>
+      <div>1.20</div>
+      <div>150</div>
+      <div>Annuel</div>
+      <div>Asteraceae</div>
+      <div>Lactuca</div>
+      <div>sativa</div>
+      <div>Lactuca sativa</div>
+      <div>Feuilles</div>
+      <div>Camille Hébert</div>
+      <div>Épicerie Bio Plus</div>
+      <div>67 Rue de la Montagne, Montreal, QC H3G 1Z2, Canada</div>
+      <div>camille.hebert@epiceriebioplus.com</div>
+      <div>+1 514 901 2345</div>
+      <div>2025-03-25</div>
+      <div>Ferme de l’Horizon</div>
+      
+      <!-- Commande 17 (2 produits) -->
+      <div>Pommes de terre</div>
+      <div>Légumes</div>
+      <div>2.00</div>
+      <div>200</div>
+      <div>Annuel</div>
+      <div>Solanaceae</div>
+      <div>Solanum</div>
+      <div>tuberosum</div>
+      <div>Solanum tuberosum</div>
+      <div>Tubercule</div>
+      <div>Étienne Desjardins</div>
+      <div>Coop La Récolte</div>
+      <div>12 Rue des Étoiles, Drummondville, QC J2C 3P8, Canada</div>
+      <div>etienne.desjardins@cooprecolte.com</div>
+      <div>+1 819 456 7890</div>
+      <div>2025-04-01</div>
+      <div>Ferme des Lilas</div>
+      
+      <div>Concombres</div>
+      <div>Légumes</div>
+      <div>1.80</div>
+      <div>90</div>
+      <div>Annuel</div>
+      <div>Cucurbitaceae</div>
+      <div>Cucumis</div>
+      <div>sativus</div>
+      <div>Cucumis sativus</div>
+      <div>Fruit</div>
+      <div>Étienne Desjardins</div>
+      <div>Coop La Récolte</div>
+      <div>12 Rue des Étoiles, Drummondville, QC J2C 3P8, Canada</div>
+      <div>etienne.desjardins@cooprecolte.com</div>
+      <div>+1 819 456 7890</div>
+      <div>2025-04-01</div>
+      <div>AgriBio SARL</div>
+      
+      <!-- Commande 18 (3 produits) -->
+      <div>Poivrons</div>
+      <div>Légumes</div>
+      <div>2.50</div>
+      <div>70</div>
+      <div>Annuel</div>
+      <div>Solanaceae</div>
+      <div>Capsicum</div>
+      <div>annuum</div>
+      <div>Capsicum annuum</div>
+      <div>Fruit</div>
+      <div>Simon Gauthier</div>
+      <div>Restaurant Les Champs</div>
+      <div>56 Rue des Pins, Laval, QC H7K 1B9, Canada</div>
+      <div>simon.gauthier@leschamps.com</div>
+      <div>+1 514 678 9012</div>
+      <div>2025-04-05</div>
+      <div>Les Jardins de Provence</div>
+      
+      <div>Oignons</div>
+      <div>Légumes</div>
+      <div>1.00</div>
+      <div>120</div>
+      <div>Bisannuel</div>
+      <div>Amaryllidaceae</div>
+      <div>Allium</div>
+      <div>cepa</div>
+      <div>Allium cepa</div>
+      <div>Bulbe</div>
+      <div>Simon Gauthier</div>
+      <div>Restaurant Les Champs</div>
+      <div>56 Rue des Pins, Laval, QC H7K 1B9, Canada</div>
+      <div>simon.gauthier@leschamps.com</div>
+      <div>+1 514 678 9012</div>
+      <div>2025-04-05</div>
+      <div>Ferme du Nord</div>
+      
+      <div>Radis</div>
+      <div>Légumes</div>
+      <div>0.80</div>
+      <div>200</div>
+      <div>Annuel</div>
+      <div>Brassicaceae</div>
+      <div>Raphanus</div>
+      <div>raphanistrum</div>
+      <div>Raphanus raphanistrum</div>
+      <div>Racine</div>
+      <div>Simon Gauthier</div>
+      <div>Restaurant Les Champs</div>
+      <div>56 Rue des Pins, Laval, QC H7K 1B9, Canada</div>
+      <div>simon.gauthier@leschamps.com</div>
+      <div>+1 514 678 9012</div>
+      <div>2025-04-05</div>
+      <div>BioFerme Québec</div>
+      
+      <!-- Commande 19 (1 produit) -->
+      <div>Carottes</div>
+      <div>Légumes</div>
+      <div>1.50</div>
+      <div>100</div>
+      <div>Annuel</div>
+      <div>Apiaceae</div>
+      <div>Daucus</div>
+      <div>carota</div>
+      <div>Daucus carota</div>
+      <div>Racine</div>
+      <div>François Lemieux</div>
+      <div></div>
+      <div>34 Rue des Champs, Saint-Jean-sur-Richelieu, QC J3B 2W5, Canada</div>
+      <div>francois.lemieux@email.com</div>
+      <div>+1 450 890 1234</div>
+      <div>2025-04-10</div>
+      <div>Les Champs d’Or</div>
+      
+      <!-- Commande 20 (3 produits) -->
+      <div>Laitues</div>
+      <div>Légumes</div>
+      <div>1.20</div>
+      <div>150</div>
+      <div>Annuel</div>
+      <div>Asteraceae</div>
+      <div>Lactuca</div>
+      <div>sativa</div>
+      <div>Lactuca sativa</div>
+      <div>Feuilles</div>
+      <div>David Caron</div>
+      <div>Restaurant L’Érable</div>
+      <div>89 Avenue des Lilas, Québec, QC G1L 1B4, Canada</div>
+      <div>david.caron@lerable.com</div>
+      <div>+1 418 012 3456</div>
+      <div>2025-04-15</div>
+      <div>Verger de la Loire</div>
+      
+      <div>Tomates</div>
+      <div>Légumes</div>
+      <div>3.00</div>
+      <div>80</div>
+      <div>Annuel</div>
+      <div>Solanaceae</div>
+      <div>Solanum</div>
+      <div>lycopersicum</div>
+      <div>Solanum lycopersicum</div>
+      <div>Fruit</div>
+      <div>David Caron</div>
+      <div>Restaurant L’Érable</div>
+      <div>89 Avenue des Lilas, Québec, QC G1L 1B4, Canada</div>
+      <div>david.caron@lerable.com</div>
+      <div>+1 418 012 3456</div>
+      <div>2025-04-15</div>
+      <div>Ferme Verte</div>
+      
+      <div>Courgettes</div>
+      <div>Légumes</div>
+      <div>2.20</div>
+      <div>60</div>
+      <div>Annuel</div>
+      <div>Cucurbitaceae</div>
+      <div>Cucurbita</div>
+      <div>pepo</div>
+      <div>Cucurbita pepo</div>
+      <div>Fruit</div>
+      <div>David Caron</div>
+      <div>Restaurant L’Érable</div>
+      <div>89 Avenue des Lilas, Québec, QC G1L 1B4, Canada</div>
+      <div>david.caron@lerable.com</div>
+      <div>+1 418 012 3456</div>
+      <div>2025-04-15</div>
+      <div>AgriCoop Normandie</div>
+      
+      <!-- Commande 21 (1 produit) -->
+      <div>Pommes de terre</div>
+      <div>Légumes</div>
+      <div>2.00</div>
+      <div>200</div>
+      <div>Annuel</div>
+      <div>Solanaceae</div>
+      <div>Solanum</div>
+      <div>tuberosum</div>
+      <div>Solanum tuberosum</div>
+      <div>Tubercule</div>
+      <div>Marie Tremblay</div>
+      <div>Épicerie Verte</div>
+      <div>123 Rue Saint-Laurent, Montreal, QC H2X 1Y3, Canada</div>
+      <div>marie.tremblay@epicerieverte.com</div>
+      <div>+1 514 123 4567</div>
+      <div>2025-04-20</div>
+      <div>Les Terres Fertiles</div>
+      
+      <!-- Commande 22 (2 produits) -->
+      <div>Concombres</div>
+      <div>Légumes</div>
+      <div>1.80</div>
+      <div>90</div>
+      <div>Annuel</div>
+      <div>Cucurbitaceae</div>
+      <div>Cucumis</div>
+      <div>sativus</div>
+      <div>Cucumis sativus</div>
+      <div>Fruit</div>
+      <div>Sophie Gagnon</div>
+      <div></div>
+      <div>78 Boulevard des Laurentides, Laval, QC H7G 2T3, Canada</div>
+      <div>sophie.gagnon@email.com</div>
+      <div>+1 450 345 6789</div>
+      <div>2025-04-25</div>
+      <div>Ferme du Soleil Levant</div>
+      
+      <div>Poivrons</div>
+      <div>Légumes</div>
+      <div>2.50</div>
+      <div>70</div>
+      <div>Annuel</div>
+      <div>Solanaceae</div>
+      <div>Capsicum</div>
+      <div>annuum</div>
+      <div>Capsicum annuum</div>
+      <div>Fruit</div>
+      <div>Sophie Gagnon</div>
+      <div></div>
+      <div>78 Boulevard des Laurentides, Laval, QC H7G 2T3, Canada</div>
+      <div>sophie.gagnon@email.com</div>
+      <div>+1 450 345 6789</div>
+      <div>2025-04-25</div>
+      <div>Les Champs de Wallonie</div>
+      
+      <!-- Commande 23 (2 produits) -->
+      <div>Oignons</div>
+      <div>Légumes</div>
+      <div>1.00</div>
+      <div>120</div>
+      <div>Bisannuel</div>
+      <div>Amaryllidaceae</div>
+      <div>Allium</div>
+      <div>cepa</div>
+      <div>Allium cepa</div>
+      <div>Bulbe</div>
+      <div>Émilie Roy</div>
+      <div>Coop Aliments Sains</div>
+      <div>123 Rue Saint-Jean, Longueuil, QC J4H 2Y3, Canada</div>
+      <div>emilie.roy@coopaliment.com</div>
+      <div>+1 450 567 8901</div>
+      <div>2025-05-01</div>
+      <div>Maple Farms</div>
+      
+      <div>Radis</div>
+      <div>Légumes</div>
+      <div>0.80</div>
+      <div>200</div>
+      <div>Annuel</div>
+      <div>Brassicaceae</div>
+      <div>Raphanus</div>
+      <div>raphanistrum</div>
+      <div>Raphanus raphanistrum</div>
+      <div>Racine</div>
+      <div>Émilie Roy</div>
+      <div>Coop Aliments Sains</div>
+      <div>123 Rue Saint-Jean, Longueuil, QC J4H 2Y3, Canada</div>
+      <div>emilie.roy@coopaliment.com</div>
+      <div>+1 450 567 8901</div>
+      <div>2025-05-01</div>
+      <div>Ferme des Étoiles</div>
+      
+      <!-- Commande 24 (3 produits) -->
+      <div>Carottes</div>
+      <div>Légumes</div>
+      <div>1.50</div>
+      <div>100</div>
+      <div>Annuel</div>
+      <div>Apiaceae</div>
+      <div>Daucus</div>
+      <div>carota</div>
+      <div>Daucus carota</div>
+      <div>Racine</div>
+      <div>Anne Lavoie</div>
+      <div>Restaurant Le Jardin</div>
+      <div>89 Boulevard Charest, Québec, QC G1K 3G5, Canada</div>
+      <div>anne.lavoie@lejardin.com</div>
+      <div>+1 418 789 0123</div>
+      <div>2025-05-05</div>
+      <div>AgriNature</div>
+      
+      <div>Laitues</div>
+      <div>Légumes</div>
+      <div>1.20</div>
+      <div>150</div>
+      <div>Annuel</div>
+      <div>Asteraceae</div>
+      <div>Lactuca</div>
+      <div>sativa</div>
+      <div>Lactuca sativa</div>
+      <div>Feuilles</div>
+      <div>Anne Lavoie</div>
+      <div>Restaurant Le Jardin</div>
+      <div>89 Boulevard Charest, Québec, QC G1K 3G5, Canada</div>
+      <div>anne.lavoie@lejardin.com</div>
+      <div>+1 418 789 0123</div>
+      <div>2025-05-05</div>
+      <div>Les Jardins de la Meuse</div>
+      
+      <div>Tomates</div>
+      <div>Légumes</div>
+      <div>3.00</div>
+      <div>80</div>
+      <div>Annuel</div>
+      <div>Solanaceae</div>
+      <div>Solanum</div>
+      <div>lycopersicum</div>
+      <div>Solanum lycopersicum</div>
+      <div>Fruit</div>
+      <div>Anne Lavoie</div>
+      <div>Restaurant Le Jardin</div>
+      <div>89 Boulevard Charest, Québec, QC G1K 3G5, Canada</div>
+      <div>anne.lavoie@lejardin.com</div>
+      <div>+1 418 789 0123</div>
+      <div>2025-05-05</div>
+      <div>Ferme des Prairies</div>
+      
+      <!-- Commande 25 (1 produit) -->
+      <div>Courgettes</div>
+      <div>Légumes</div>
+      <div>2.20</div>
+      <div>60</div>
+      <div>Annuel</div>
+      <div>Cucurbitaceae</div>
+      <div>Cucurbita</div>
+      <div>pepo</div>
+      <div>Cucurbita pepo</div>
+      <div>Fruit</div>
+      <div>Chloé Beaudoin</div>
+      <div></div>
+      <div>23 Rue de la Paix, Brossard, QC J4Y 2L3, Canada</div>
+      <div>chloe.beaudoin@email.com</div>
+      <div>+1 450 901 2345</div>
+      <div>2025-05-10</div>
+      <div>Les Terres du Sud</div>
+    </div>
+    <a href="index.html" class="return-button" onclick="console.log('Clic sur Retour à Thaliesium')">🔍 Retour à Thaliesium</a>
+  </div>
+</body>
+</html>

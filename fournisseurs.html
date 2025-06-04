@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Fournisseurs</title>
+  <style>
+    body {
+      margin: 0;
+      background: #f0f0f0;
+      font-family: Arial, sans-serif;
+    }
+    .container {
+      margin: 20px;
+      text-align: center;
+    }
+    h2 {
+      font-size: 1.8em;
+      color: #333;
+      margin-bottom: 20px;
+    }
+    .excel-grid {
+      display: grid;
+      grid-template-columns: 120px 120px 120px 240px;
+      grid-template-rows: 61.8px repeat(30, 30px);
+      gap: 2px;
+      background: #ccc;
+      margin: 0 auto;
+      max-width: 600px;
+    }
+    .excel-grid div {
+      background: #fff;
+      border: 1px solid #ddd;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      padding: 5px;
+      text-align: center;
+      min-width: 120px;
+    }
+    .excel-grid .header {
+      background: #d3d3d3;
+      font-weight: bold;
+      text-align: center;
+    }
+    /* Ajout d'un style pour les cellules de la colonne adresse */
+    .excel-grid div:nth-child(4n) {
+      text-align: left;
+      justify-content: flex-start;
+      padding-left: 10px;
+      min-width: 240px;
+    }
+    .return-button {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: #ff8800;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+    .return-button:hover {
+      background: #e07b00;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Fournisseurs</h2>
+    <div class="excel-grid">
+      <div class="header">id_fournisseur</div>
+      <div class="header">nom_fournisseur</div>
+      <div class="header">contact</div>
+      <div class="header">adresse</div>
+      
+      <!-- Ligne 1 -->
+      <div>1</div>
+      <div>Ferme des Lilas</div>
+      <div>+1 514 123 4567</div>
+      <div>12 Rue Saint-Denis, Montreal, QC H2Y 1C2, Canada</div>
+      
+      <!-- Ligne 2 -->
+      <div>2</div>
+      <div>AgriBio SARL</div>
+      <div>+1 418 234 5678</div>
+      <div>45 Rue Sainte-Foy, Québec, QC G1R 1S9, Canada</div>
+      
+      <!-- Ligne 3 -->
+      <div>3</div>
+      <div>Les Jardins de Provence</div>
+      <div>+1 450 345 6789</div>
+      <div>78 Boulevard des Laurentides, Laval, QC H7G 2T3, Canada</div>
+      
+      <!-- Ligne 4 -->
+      <div>4</div>
+      <div>Ferme du Nord</div>
+      <div>+1 819 456 7890</div>
+      <div>15 Rue Principale, Gatineau, QC J8Y 3M5, Canada</div>
+      
+      <!-- Ligne 5 -->
+      <div>5</div>
+      <div>BioFerme Québec</div>
+      <div>+1 450 567 8901</div>
+      <div>123 Rue Saint-Laurent, Longueuil, QC J4H 1L9, Canada</div>
+      
+      <!-- Ligne 6 -->
+      <div>6</div>
+      <div>Les Champs d’Or</div>
+      <div>+1 819 678 9012</div>
+      <div>56 Rue King Est, Sherbrooke, QC J1G 1A2, Canada</div>
+      
+      <!-- Ligne 7 -->
+      <div>7</div>
+      <div>Verger de la Loire</div>
+      <div>+1 418 789 0123</div>
+      <div>89 Boulevard Charest, Québec, QC G1K 3G5, Canada</div>
+      
+      <!-- Ligne 8 -->
+      <div>8</div>
+      <div>Ferme Verte</div>
+      <div>+1 514 890 1234</div>
+      <div>34 Avenue Papineau, Montreal, QC H2K 4J7, Canada</div>
+      
+      <!-- Ligne 9 -->
+      <div>9</div>
+      <div>AgriCoop Normandie</div>
+      <div>+1 450 901 2345</div>
+      <div>23 Rue de la Paix, Brossard, QC J4Y 2L3, Canada</div>
+      
+      <!-- Ligne 10 -->
+      <div>10</div>
+      <div>Les Terres Fertiles</div>
+      <div>+1 819 012 3456</div>
+      <div>67 Avenue des Érables, Trois-Rivières, QC G8T 5R1, Canada</div>
+      
+      <!-- Ligne 11 -->
+      <div>11</div>
+      <div>Ferme du Soleil Levant</div>
+      <div>+1 418 123 4567</div>
+      <div>45 Rue des Lilas, Saguenay, QC G7H 5B2, Canada</div>
+      
+      <!-- Ligne 12 -->
+      <div>12</div>
+      <div>Les Champs de Wallonie</div>
+      <div>+1 514 234 5678</div>
+      <div>78 Rue Notre-Dame, Montreal, QC H2Y 1S6, Canada</div>
+      
+      <!-- Ligne 13 -->
+      <div>13</div>
+      <div>Maple Farms</div>
+      <div>+1 450 345 6789</div>
+      <div>456 Rue Saint-Jean, Longueuil, QC J4H 2Y3, Canada</div>
+      
+      <!-- Ligne 14 -->
+      <div>14</div>
+      <div>Ferme des Étoiles</div>
+      <div>+1 819 456 7890</div>
+      <div>12 Rue des Étoiles, Drummondville, QC J2C 3P8, Canada</div>
+      
+      <!-- Ligne 15 -->
+      <div>15</div>
+      <div>AgriNature</div>
+      <div>+1 418 567 8901</div>
+      <div>90 Boulevard Laurier, Québec, QC G1V 2L8, Canada</div>
+      
+      <!-- Ligne 16 -->
+      <div>16</div>
+      <div>Les Jardins de la Meuse</div>
+      <div>+1 514 678 9012</div>
+      <div>56 Rue des Pins, Laval, QC H7K 1B9, Canada</div>
+      
+      <!-- Ligne 17 -->
+      <div>17</div>
+      <div>Ferme des Prairies</div>
+      <div>+1 819 789 0123</div>
+      <div>789 Avenue des Cèdres, Gatineau, QC J9J 1T7, Canada</div>
+      
+      <!-- Ligne 18 -->
+      <div>18</div>
+      <div>Les Terres du Sud</div>
+      <div>+1 450 890 1234</div>
+      <div>34 Rue des Champs, Saint-Jean-sur-Richelieu, QC J3B 2W5, Canada</div>
+      
+      <!-- Ligne 19 -->
+      <div>19</div>
+      <div>Ferme Bio Alsace</div>
+      <div>+1 514 901 2345</div>
+      <div>67 Rue de la Montagne, Montreal, QC H3G 1Z2, Canada</div>
+      
+      <!-- Ligne 20 -->
+      <div>20</div>
+      <div>Les Champs de Genève</div>
+      <div>+1 418 012 3456</div>
+      <div>89 Avenue des Lilas, Québec, QC G1L 1B4, Canada</div>
+      
+      <!-- Ligne 21 -->
+      <div>21</div>
+      <div>Ferme de la Garonne</div>
+      <div>+1 819 123 4567</div>
+      <div>23 Rue des Roses, Sherbrooke, QC J1L 2Z8, Canada</div>
+      
+      <!-- Ligne 22 -->
+      <div>22</div>
+      <div>AgriFlandre</div>
+      <div>+1 450 234 5678</div>
+      <div>45 Boulevard des Érables, Terrebonne, QC J6W 3L1, Canada</div>
+      
+      <!-- Ligne 23 -->
+      <div>23</div>
+      <div>GreenFields Ontario</div>
+      <div>+1 514 345 6789</div>
+      <div>123 Rue des Tulipes, Montreal, QC H4C 2T5, Canada</div>
+      
+      <!-- Ligne 24 -->
+      <div>24</div>
+      <div>Ferme des Oliviers</div>
+      <div>+1 819 456 7890</div>
+      <div>56 Chemin des Pommiers, Granby, QC J2G 9H7, Canada</div>
+      
+      <!-- Ligne 25 -->
+      <div>25</div>
+      <div>Les Jardins de Bretagne</div>
+      <div>+1 418 567 8901</div>
+      <div>78 Rue des Sapins, Québec, QC G2G 1S4, Canada</div>
+      
+      <!-- Ligne 26 -->
+      <div>26</div>
+      <div>Ferme des Montagnes</div>
+      <div>+1 514 678 9012</div>
+      <div>12 Avenue des Neiges, Laval, QC H7M 3G2, Canada</div>
+      
+      <!-- Ligne 27 -->
+      <div>27</div>
+      <div>AgriCoop Occitanie</div>
+      <div>+1 819 789 0123</div>
+      <div>90 Rue des Coquelicots, Saint-Jérôme, QC J7Z 5T3, Canada</div>
+      
+      <!-- Ligne 28 -->
+      <div>28</div>
+      <div>Les Champs de Bruges</div>
+      <div>+1 450 890 1234</div>
+      <div>34 Rue des Canaux, Repentigny, QC J6A 5S7, Canada</div>
+      
+      <!-- Ligne 29 -->
+      <div>29</div>
+      <div>Harvest Farms</div>
+      <div>+1 514 901 2345</div>
+      <div>456 Chemin des Étoiles, Montreal, QC H1T 1R3, Canada</div>
+      
+      <!-- Ligne 30 -->
+      <div>30</div>
+      <div>Ferme de l’Horizon</div>
+      <div>+1 418 012 3456</div>
+      <div>67 Rue des Horizons, Québec, QC G1W 4X3, Canada</div>
+    </div>
+    <a href="index.html" class="return-button" onclick="console.log('Clic sur Retour vers index.html')">Retour</a>
+  </div>
+</body>
+</html>

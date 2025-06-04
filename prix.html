@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Prix des Produits</title>
+  <style>
+    body {
+      margin: 0;
+      background: #f0f0f0;
+      font-family: Arial, sans-serif;
+    }
+    .container {
+      margin: 20px;
+      text-align: center;
+    }
+    h2 {
+      font-size: 1.8em;
+      color: #333;
+      margin-bottom: 20px;
+    }
+    .excel-grid {
+      display: grid;
+      grid-template-columns: 150px 120px;
+      grid-template-rows: 61.8px repeat(9, 30px);
+      gap: 2px;
+      background: #ccc;
+      margin: 0 auto;
+      max-width: 270px;
+    }
+    .excel-grid div {
+      background: #fff;
+      border: 1px solid #ddd;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      padding: 5px;
+      text-align: center;
+      min-width: 120px;
+    }
+    .excel-grid .header {
+      background: #d3d3d3;
+      font-weight: bold;
+      text-align: center;
+    }
+    /* Style pour la colonne nom_produit (1ère colonne) */
+    .excel-grid div:nth-child(2n + 1) {
+      text-align: left;
+      justify-content: flex-start;
+      padding-left: 10px;
+      min-width: 150px;
+    }
+    /* Style pour la colonne prix_unitaire (2ème colonne) */
+    .excel-grid div:nth-child(2n) {
+      min-width: 120px;
+    }
+    .return-button {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: #ff8800;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+    .return-button:hover {
+      background: #e07b00;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Prix des Produits</h2>
+    <div class="excel-grid">
+      <div class="header">nom_produit</div>
+      <div class="header">prix_unitaire</div>
+      
+      <!-- Produit 1 -->
+      <div>Carottes</div>
+      <div>1.50</div>
+      
+      <!-- Produit 2 -->
+      <div>Pommes de terre</div>
+      <div>2.00</div>
+      
+      <!-- Produit 3 -->
+      <div>Laitues</div>
+      <div>1.20</div>
+      
+      <!-- Produit 4 -->
+      <div>Tomates</div>
+      <div>3.00</div>
+      
+      <!-- Produit 5 -->
+      <div>Concombres</div>
+      <div>1.80</div>
+      
+      <!-- Produit 6 -->
+      <div>Poivrons</div>
+      <div>2.50</div>
+      
+      <!-- Produit 7 -->
+      <div>Oignons</div>
+      <div>1.00</div>
+      
+      <!-- Produit 8 -->
+      <div>Courgettes</div>
+      <div>2.20</div>
+      
+      <!-- Produit 9 -->
+      <div>Radis</div>
+      <div>0.80</div>
+    </div>
+    <a href="index.html" class="return-button" onclick="console.log('Clic sur Retour vers index.html')">Retour</a>
+  </div>
+</body>
+</html>

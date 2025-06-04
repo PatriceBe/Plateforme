@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Commandes</title>
+  <style>
+    body {
+      margin: 0;
+      background: #f0f0f0;
+      font-family: Arial, sans-serif;
+    }
+    .container {
+      margin: 20px;
+      text-align: center;
+    }
+    h2 {
+      font-size: 1.8em;
+      color: #333;
+      margin-bottom: 20px;
+    }
+    .excel-grid {
+      display: grid;
+      grid-template-columns: 100px 100px 120px 150px 100px 240px;
+      grid-template-rows: 61.8px repeat(48, 30px);
+      gap: 2px;
+      background: #ccc;
+      margin: 0 auto;
+      max-width: 710px;
+    }
+    .excel-grid div {
+      background: #fff;
+      border: 1px solid #ddd;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      padding: 5px;
+      text-align: center;
+      min-width: 100px;
+    }
+    .excel-grid .header {
+      background: #d3d3d3;
+      font-weight: bold;
+      text-align: center;
+    }
+    /* Style pour la colonne date_commande (3ème colonne) */
+    .excel-grid div:nth-child(6n + 3) {
+      text-align: left;
+      justify-content: flex-start;
+      padding-left: 10px;
+      min-width: 120px;
+    }
+    /* Style pour la colonne produit (4ème colonne) */
+    .excel-grid div:nth-child(6n + 4) {
+      text-align: left;
+      justify-content: flex-start;
+      padding-left: 10px;
+      min-width: 150px;
+    }
+    /* Style pour la colonne quantite (5ème colonne) */
+    .excel-grid div:nth-child(6n + 5) {
+      text-align: center;
+      min-width: 100px;
+    }
+    /* Style pour la colonne fournisseur (6ème colonne) */
+    .excel-grid div:nth-child(6n) {
+      text-align: left;
+      justify-content: flex-start;
+      padding-left: 10px;
+      min-width: 240px;
+    }
+    /* Styles pour alterner les couleurs de fond des commandes */
+    .commande-impaire {
+      background: #fff;
+    }
+    .commande-paire {
+      background: #f5f5f5;
+    }
+    .return-button {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: #ff8800;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+    .return-button:hover {
+      background: #e07b00;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Commandes</h2>
+    <div class="excel-grid">
+      <div class="header">id_commande</div>
+      <div class="header">id_client</div>
+      <div class="header">date_commande</div>
+      <div class="header">produit</div>
+      <div class="header">quantite</div>
+      <div class="header">fournisseur</div>
+      
+      <!-- Commande 1 (2 produits, impaire) -->
+      <div class="commande-impaire">1</div>
+      <div class="commande-impaire">1</div>
+      <div class="commande-impaire">2025-01-10</div>
+      <div class="commande-impaire">Carottes</div>
+      <div class="commande-impaire">10</div>
+      <div class="commande-impaire">Ferme des Lilas</div>
+      
+      <div class="commande-impaire">1</div>
+      <div class="commande-impaire">1</div>
+      <div class="commande-impaire">2025-01-10</div>
+      <div class="commande-impaire">Tomates</div>
+      <div class="commande-impaire">5</div>
+      <div class="commande-impaire">AgriBio SARL</div>
+      
+      <!-- Commande 2 (1 produit, paire) -->
+      <div class="commande-paire">2</div>
+      <div class="commande-paire">3</div>
+      <div class="commande-paire">2025-01-15</div>
+      <div class="commande-paire">Laitues</div>
+      <div class="commande-paire">8</div>
+      <div class="commande-paire">Les Jardins de Provence</div>
+      
+      <!-- Commande 3 (3 produits, impaire) -->
+      <div class="commande-impaire">3</div>
+      <div class="commande-impaire">5</div>
+      <div class="commande-impaire">2025-01-20</div>
+      <div class="commande-impaire">Pommes de terre</div>
+      <div class="commande-impaire">15</div>
+      <div class="commande-impaire">Ferme du Nord</div>
+      
+      <div class="commande-impaire">3</div>
+      <div class="commande-impaire">5</div>
+      <div class="commande-impaire">2025-01-20</div>
+      <div class="commande-impaire">Concombres</div>
+      <div class="commande-impaire">12</div>
+      <div class="commande-impaire">BioFerme Québec</div>
+      
+      <div class="commande-impaire">3</div>
+      <div class="commande-impaire">5</div>
+      <div class="commande-impaire">2025-01-20</div>
+      <div class="commande-impaire">Oignons</div>
+      <div class="commande-impaire">20</div>
+      <div class="commande-impaire">Les Champs d’Or</div>
+      
+      <!-- Commande 4 (2 produits, paire) -->
+      <div class="commande-paire">4</div>
+      <div class="commande-paire">2</div>
+      <div class="commande-paire">2025-01-25</div>
+      <div class="commande-paire">Poivrons</div>
+      <div class="commande-paire">7</div>
+      <div class="commande-paire">Verger de la Loire</div>
+      
+      <div class="commande-paire">4</div>
+      <div class="commande-paire">2</div>
+      <div class="commande-paire">2025-01-25</div>
+      <div class="commande-paire">Radis</div>
+      <div class="commande-paire">10</div>
+      <div class="commande-paire">Ferme Verte</div>
+      
+      <!-- Commande 5 (1 produit, impaire) -->
+      <div class="commande-impaire">5</div>
+      <div class="commande-impaire">7</div>
+      <div class="commande-impaire">2025-02-01</div>
+      <div class="commande-impaire">Courgettes</div>
+      <div class="commande-impaire">6</div>
+      <div class="commande-impaire">AgriCoop Normandie</div>
+      
+      <!-- Commande 6 (3 produits, paire) -->
+      <div class="commande-paire">6</div>
+      <div class="commande-paire">4</div>
+      <div class="commande-paire">2025-02-05</div>
+      <div class="commande-paire">Carottes</div>
+      <div class="commande-paire">12</div>
+      <div class="commande-paire">Les Terres Fertiles</div>
+      
+      <div class="commande-paire">6</div>
+      <div class="commande-paire">4</div>
+      <div class="commande-paire">2025-02-05</div>
+      <div class="commande-paire">Laitues</div>
+      <div class="commande-paire">9</div>
+      <div class="commande-paire">Ferme du Soleil Levant</div>
+      
+      <div class="commande-paire">6</div>
+      <div class="commande-paire">4</div>
+      <div class="commande-paire">2025-02-05</div>
+      <div class="commande-paire">Tomates</div>
+      <div class="commande-paire">5</div>
+      <div class="commande-paire">Les Champs de Wallonie</div>
+      
+      <!-- Commande 7 (1 produit, impaire) -->
+      <div class="commande-impaire">7</div>
+      <div class="commande-impaire">8</div>
+      <div class="commande-impaire">2025-02-10</div>
+      <div class="commande-impaire">Pommes de terre</div>
+      <div class="commande-impaire">18</div>
+      <div class="commande-impaire">Maple Farms</div>
+      
+      <!-- Commande 8 (2 produits, paire) -->
+      <div class="commande-paire">8</div>
+      <div class="commande-paire">10</div>
+      <div class="commande-paire">2025-02-15</div>
+      <div class="commande-paire">Concombres</div>
+      <div class="commande-paire">10</div>
+      <div class="commande-paire">Ferme des Étoiles</div>
+      
+      <div class="commande-paire">8</div>
+      <div class="commande-paire">10</div>
+      <div class="commande-paire">2025-02-15</div>
+      <div class="commande-paire">Poivrons</div>
+      <div class="commande-paire">8</div>
+      <div class="commande-paire">AgriNature</div>
+      
+      <!-- Commande 9 (3 produits, impaire) -->
+      <div class="commande-impaire">9</div>
+      <div class="commande-impaire">12</div>
+      <div class="commande-impaire">2025-02-20</div>
+      <div class="commande-impaire">Oignons</div>
+      <div class="commande-impaire">15</div>
+      <div class="commande-impaire">Les Jardins de la Meuse</div>
+      
+      <div class="commande-impaire">9</div>
+      <div class="commande-impaire">12</div>
+      <div class="commande-impaire">2025-02-20</div>
+      <div class="commande-impaire">Radis</div>
+      <div class="commande-impaire">12</div>
+      <div class="commande-impaire">Ferme des Prairies</div>
+      
+      <div class="commande-impaire">9</div>
+      <div class="commande-impaire">12</div>
+      <div class="commande-impaire">2025-02-20</div>
+      <div class="commande-impaire">Courgettes</div>
+      <div class="commande-impaire">7</div>
+      <div class="commande-impaire">Les Terres du Sud</div>
+      
+      <!-- Commande 10 (1 produit, paire) -->
+      <div class="commande-paire">10</div>
+      <div class="commande-paire">6</div>
+      <div class="commande-paire">2025-02-25</div>
+      <div class="commande-paire">Carottes</div>
+      <div class="commande-paire">14</div>
+      <div class="commande-paire">Ferme Bio Alsace</div>
+      
+      <!-- Commande 11 (2 produits, impaire) -->
+      <div class="commande-impaire">11</div>
+      <div class="commande-impaire">9</div>
+      <div class="commande-impaire">2025-03-01</div>
+      <div class="commande-impaire">Laitues</div>
+      <div class="commande-impaire">10</div>
+      <div class="commande-impaire">Les Champs de Genève</div>
+      
+      <div class="commande-impaire">11</div>
+      <div class="commande-impaire">9</div>
+      <div class="commande-impaire">2025-03-01</div>
+      <div class="commande-impaire">Tomates</div>
+      <div class="commande-impaire">6</div>
+      <div class="commande-impaire">Ferme de la Garonne</div>
+      
+      <!-- Commande 12 (2 produits, paire) -->
+      <div class="commande-paire">12</div>
+      <div class="commande-paire">11</div>
+      <div class="commande-paire">2025-03-05</div>
+      <div class="commande-paire">Pommes de terre</div>
+      <div class="commande-paire">20</div>
+      <div class="commande-paire">AgriFlandre</div>
+      
+      <div class="commande-paire">12</div>
+      <div class="commande-paire">11</div>
+      <div class="commande-paire">2025-03-05</div>
+      <div class="commande-paire">Concombres</div>
+      <div class="commande-paire">8</div>
+      <div class="commande-paire">GreenFields Ontario</div>
+      
+      <!-- Commande 13 (1 produit, impaire) -->
+      <div class="commande-impaire">13</div>
+      <div class="commande-impaire">13</div>
+      <div class="commande-impaire">2025-03-10</div>
+      <div class="commande-impaire">Poivrons</div>
+      <div class="commande-impaire">9</div>
+      <div class="commande-impaire">Ferme des Oliviers</div>
+      
+      <!-- Commande 14 (2 produits, paire) -->
+      <div class="commande-paire">14</div>
+      <div class="commande-paire">15</div>
+      <div class="commande-paire">2025-03-15</div>
+      <div class="commande-paire">Oignons</div>
+      <div class="commande-paire">18</div>
+      <div class="commande-paire">Les Jardins de Bretagne</div>
+      
+      <div class="commande-paire">14</div>
+      <div class="commande-paire">15</div>
+      <div class="commande-paire">2025-03-15</div>
+      <div class="commande-paire">Radis</div>
+      <div class="commande-paire">10</div>
+      <div class="commande-paire">Ferme des Montagnes</div>
+      
+      <!-- Commande 15 (3 produits, impaire) -->
+      <div class="commande-impaire">15</div>
+      <div class="commande-impaire">17</div>
+      <div class="commande-impaire">2025-03-20</div>
+      <div class="commande-impaire">Carottes</div>
+      <div class="commande-impaire">12</div>
+      <div class="commande-impaire">AgriCoop Occitanie</div>
+      
+      <div class="commande-impaire">15</div>
+      <div class="commande-impaire">17</div>
+      <div class="commande-impaire">2025-03-20</div>
+      <div class="commande-impaire">Courgettes</div>
+      <div class="commande-impaire">5</div>
+      <div class="commande-impaire">Les Champs de Bruges</div>
+      
+      <div class="commande-impaire">15</div>
+      <div class="commande-impaire">17</div>
+      <div class="commande-impaire">2025-03-20</div>
+      <div class="commande-impaire">Tomates</div>
+      <div class="commande-impaire">8</div>
+      <div class="commande-impaire">Harvest Farms</div>
+      
+      <!-- Commande 16 (1 produit, paire) -->
+      <div class="commande-paire">16</div>
+      <div class="commande-paire">19</div>
+      <div class="commande-paire">2025-03-25</div>
+      <div class="commande-paire">Laitues</div>
+      <div class="commande-paire">7</div>
+      <div class="commande-paire">Ferme de l’Horizon</div>
+      
+      <!-- Commande 17 (2 produits, impaire) -->
+      <div class="commande-impaire">17</div>
+      <div class="commande-impaire">14</div>
+      <div class="commande-impaire">2025-04-01</div>
+      <div class="commande-impaire">Pommes de terre</div>
+      <div class="commande-impaire">15</div>
+      <div class="commande-impaire">Ferme des Lilas</div>
+      
+      <div class="commande-impaire">17</div>
+      <div class="commande-impaire">14</div>
+      <div class="commande-impaire">2025-04-01</div>
+      <div class="commande-impaire">Concombres</div>
+      <div class="commande-impaire">10</div>
+      <div class="commande-impaire">AgriBio SARL</div>
+      
+      <!-- Commande 18 (3 produits, paire) -->
+      <div class="commande-paire">18</div>
+      <div class="commande-paire">16</div>
+      <div class="commande-paire">2025-04-05</div>
+      <div class="commande-paire">Poivrons</div>
+      <div class="commande-paire">6</div>
+      <div class="commande-paire">Les Jardins de Provence</div>
+      
+      <div class="commande-paire">18</div>
+      <div class="commande-paire">16</div>
+      <div class="commande-paire">2025-04-05</div>
+      <div class="commande-paire">Oignons</div>
+      <div class="commande-paire">12</div>
+      <div class="commande-paire">Ferme du Nord</div>
+      
+      <div class="commande-paire">18</div>
+      <div class="commande-paire">16</div>
+      <div class="commande-paire">2025-04-05</div>
+      <div class="commande-paire">Radis</div>
+      <div class="commande-paire">15</div>
+      <div class="commande-paire">BioFerme Québec</div>
+      
+      <!-- Commande 19 (1 produit, impaire) -->
+      <div class="commande-impaire">19</div>
+      <div class="commande-impaire">18</div>
+      <div class="commande-impaire">2025-04-10</div>
+      <div class="commande-impaire">Carottes</div>
+      <div class="commande-impaire">10</div>
+      <div class="commande-impaire">Les Champs d’Or</div>
+      
+      <!-- Commande 20 (3 produits, paire) -->
+      <div class="commande-paire">20</div>
+      <div class="commande-paire">20</div>
+      <div class="commande-paire">2025-04-15</div>
+      <div class="commande-paire">Laitues</div>
+      <div class="commande-paire">8</div>
+      <div class="commande-paire">Verger de la Loire</div>
+      
+      <div class="commande-paire">20</div>
+      <div class="commande-paire">20</div>
+      <div class="commande-paire">2025-04-15</div>
+      <div class="commande-paire">Tomates</div>
+      <div class="commande-paire">5</div>
+      <div class="commande-paire">Ferme Verte</div>
+      
+      <div class="commande-paire">20</div>
+      <div class="commande-paire">20</div>
+      <div class="commande-paire">2025-04-15</div>
+      <div class="commande-paire">Courgettes</div>
+      <div class="commande-paire">7</div>
+      <div class="commande-paire">AgriCoop Normandie</div>
+      
+      <!-- Commande 21 (1 produit, impaire) -->
+      <div class="commande-impaire">21</div>
+      <div class="commande-impaire">1</div>
+      <div class="commande-impaire">2025-04-20</div>
+      <div class="commande-impaire">Pommes de terre</div>
+      <div class="commande-impaire">20</div>
+      <div class="commande-impaire">Les Terres Fertiles</div>
+      
+      <!-- Commande 22 (2 produits, paire) -->
+      <div class="commande-paire">22</div>
+      <div class="commande-paire">3</div>
+      <div class="commande-paire">2025-04-25</div>
+      <div class="commande-paire">Concombres</div>
+      <div class="commande-paire">9</div>
+      <div class="commande-paire">Ferme du Soleil Levant</div>
+      
+      <div class="commande-paire">22</div>
+      <div class="commande-paire">3</div>
+      <div class="commande-paire">2025-04-25</div>
+      <div class="commande-paire">Poivrons</div>
+      <div class="commande-paire">6</div>
+      <div class="commande-paire">Les Champs de Wallonie</div>
+      
+      <!-- Commande 23 (2 produits, impaire) -->
+      <div class="commande-impaire">23</div>
+      <div class="commande-impaire">5</div>
+      <div class="commande-impaire">2025-05-01</div>
+      <div class="commande-impaire">Oignons</div>
+      <div class="commande-impaire">15</div>
+      <div class="commande-impaire">Maple Farms</div>
+      
+      <div class="commande-impaire">23</div>
+      <div class="commande-impaire">5</div>
+      <div class="commande-impaire">2025-05-01</div>
+      <div class="commande-impaire">Radis</div>
+      <div class="commande-impaire">10</div>
+      <div class="commande-impaire">Ferme des Étoiles</div>
+      
+      <!-- Commande 24 (3 produits, paire) -->
+      <div class="commande-paire">24</div>
+      <div class="commande-paire">7</div>
+      <div class="commande-paire">2025-05-05</div>
+      <div class="commande-paire">Carottes</div>
+      <div class="commande-paire">12</div>
+      <div class="commande-paire">AgriNature</div>
+      
+      <div class="commande-paire">24</div>
+      <div class="commande-paire">7</div>
+      <div class="commande-paire">2025-05-05</div>
+      <div class="commande-paire">Laitues</div>
+      <div class="commande-paire">8</div>
+      <div class="commande-paire">Les Jardins de la Meuse</div>
+      
+      <div class="commande-paire">24</div>
+      <div class="commande-paire">7</div>
+      <div class="commande-paire">2025-05-05</div>
+      <div class="commande-paire">Tomates</div>
+      <div class="commande-paire">5</div>
+      <div class="commande-paire">Ferme des Prairies</div>
+      
+      <!-- Commande 25 (1 produit, impaire) -->
+      <div class="commande-impaire">25</div>
+      <div class="commande-impaire">9</div>
+      <div class="commande-impaire">2025-05-10</div>
+      <div class="commande-impaire">Courgettes</div>
+      <div class="commande-impaire">6</div>
+      <div class="commande-impaire">Les Terres du Sud</div>
+    </div>
+    <a href="index.html" class="return-button" onclick="console.log('Clic sur Retour vers index.html')">Retour</a>
+  </div>
+</body>
+</html>

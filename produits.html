@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Produits</title>
+  <style>
+    body {
+      margin: 0;
+      background: #f0f0f0;
+      font-family: Arial, sans-serif;
+    }
+    .container {
+      margin: 20px;
+      text-align: center;
+    }
+    h2 {
+      font-size: 1.8em;
+      color: #333;
+      margin-bottom: 20px;
+    }
+    .excel-grid {
+      display: grid;
+      grid-template-columns: repeat(11, 120px);
+      grid-template-rows: 61.8px repeat(9, 30px);
+      gap: 2px;
+      background: #ccc;
+      margin: 0 auto;
+      max-width: 1320px;
+      overflow-x: auto;
+    }
+    .excel-grid div {
+      background: #fff;
+      border: 1px solid #ddd;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 14px;
+      padding: 5px;
+      text-align: center;
+      min-width: 120px;
+    }
+    .excel-grid .header {
+      background: #d3d3d3;
+      font-weight: bold;
+      text-align: center;
+    }
+    .return-button {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 10px 20px;
+      background: #ff8800;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+    .return-button:hover {
+      background: #e07b00;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Produits</h2>
+    <div class="excel-grid">
+      <div class="header">id_produit</div>
+      <div class="header">nom_produit</div>
+      <div class="header">categorie</div>
+      <div class="header">prix_unitaire</div>
+      <div class="header">stock_actuel</div>
+      <div class="header">type</div>
+      <div class="header">famille</div>
+      <div class="header">genre</div>
+      <div class="header">especes</div>
+      <div class="header">nom_scientifique</div>
+      <div class="header">partie_comestible</div>
+      
+      <!-- Ligne 1 : Carotte -->
+      <div>1</div>
+      <div>Carotte</div>
+      <div>Légumes racines</div>
+      <div>1.62 $/kg</div>
+      <div>150 kg</div>
+      <div>Bisannuel</div>
+      <div>Apiacées</div>
+      <div>Daucus</div>
+      <div>carota</div>
+      <div>Daucus carota</div>
+      <div>Racine</div>
+      
+      <!-- Ligne 2 : Salade -->
+      <div>2</div>
+      <div>Salade</div>
+      <div>Légumes feuilles</div>
+      <div>2.16 $/pièce</div>
+      <div>200 pièces</div>
+      <div>Annuel</div>
+      <div>Astéracées</div>
+      <div>Lactuca</div>
+      <div>sativa</div>
+      <div>Lactuca sativa</div>
+      <div>Feuilles</div>
+      
+      <!-- Ligne 3 : Poireau -->
+      <div>3</div>
+      <div>Poireau</div>
+      <div>Légumes tiges</div>
+      <div>2.70 $/kg</div>
+      <div>80 kg</div>
+      <div>Bisannuel</div>
+      <div>Amaryllidacées</div>
+      <div>Allium</div>
+      <div>porrum</div>
+      <div>Allium porrum</div>
+      <div>Tige</div>
+      
+      <!-- Ligne 4 : Radis -->
+      <div>4</div>
+      <div>Radis</div>
+      <div>Légumes racines</div>
+      <div>1.30 $/botte</div>
+      <div>300 bottes</div>
+      <div>Annuel</div>
+      <div>Brassicacées</div>
+      <div>Raphanus</div>
+      <div>sativus</div>
+      <div>Raphanus sativus</div>
+      <div>Racine</div>
+      
+      <!-- Ligne 5 : Chou-fleur -->
+      <div>5</div>
+      <div>Chou-fleur</div>
+      <div>Légumes fleurs</div>
+      <div>3.24 $/pièce</div>
+      <div>50 pièces</div>
+      <div>Annuel</div>
+      <div>Brassicacées</div>
+      <div>Brassica</div>
+      <div>oleracea</div>
+      <div>Brassica oleracea</div>
+      <div>Fleur</div>
+      
+      <!-- Ligne 6 : Épinard -->
+      <div>6</div>
+      <div>Épinard</div>
+      <div>Légumes feuilles</div>
+      <div>3.02 $/kg</div>
+      <div>120 kg</div>
+      <div>Annuel</div>
+      <div>Amaranthacées</div>
+      <div>Spinacia</div>
+      <div>oleracea</div>
+      <div>Spinacia oleracea</div>
+      <div>Feuilles</div>
+      
+      <!-- Ligne 7 : Betterave -->
+      <div>7</div>
+      <div>Betterave</div>
+      <div>Légumes racines</div>
+      <div>1.94 $/kg</div>
+      <div>90 kg</div>
+      <div>Bisannuel</div>
+      <div>Amaranthacées</div>
+      <div>Beta</div>
+      <div>vulgaris</div>
+      <div>Beta vulgaris</div>
+      <div>Racine</div>
+      
+      <!-- Ligne 8 : Céleri -->
+      <div>8</div>
+      <div>Céleri</div>
+      <div>Légumes tiges</div>
+      <div>2.38 $/pièce</div>
+      <div>70 pièces</div>
+      <div>Bisannuel</div>
+      <div>Apiacées</div>
+      <div>Apium</div>
+      <div>graveolens</div>
+      <div>Apium graveolens</div>
+      <div>Tige</div>
+      
+      <!-- Ligne 9 : Navet -->
+      <div>9</div>
+      <div>Navet</div>
+      <div>Légumes racines</div>
+      <div>1.73 $/kg</div>
+      <div>110 kg</div>
+      <div>Bisannuel</div>
+      <div>Brassicacées</div>
+      <div>Brassica</div>
+      <div>rapa</div>
+      <div>Brassica rapa</div>
+      <div>Racine</div>
+    </div>
+    <a href="index.html" class="return-button" onclick="console.log('Clic sur Retour vers index.html')">Retour</a>
+  </div>
+</body>
+</html>
