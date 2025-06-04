@@ -16,13 +16,10 @@
       justify-content: center;
       min-height: 100vh;
       text-align: center;
-      position: relative;
+      padding: 20px 0; /* Ajout d’un padding pour éviter que le contenu ne colle aux bords */
     }
-    /* Cercle turquoise en haut à gauche */
+    /* Cercle turquoise centré au-dessus des boutons */
     .feedback-circle {
-      position: absolute;
-      top: 20px;
-      left: 20px;
       width: 300px;
       height: 300px;
       background: #40e0d0;
@@ -33,6 +30,7 @@
       align-items: center;
       padding: 20px;
       box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      margin: 20px auto; /* Centré horizontalement avec un espacement au-dessus et en dessous */
     }
     .feedback-circle p {
       font-size: 14px;
@@ -59,7 +57,7 @@
       flex-direction: column;
       gap: 16px;
       align-items: center;
-      margin-top: 150px;
+      margin-top: 20px; /* Réduit car le cercle n’est plus en position absolue */
       margin-bottom: 50px;
     }
     .links a {
@@ -106,7 +104,7 @@
   </style>
 </head>
 <body>
-  <!-- Cercle turquoise avec texte et icônes -->
+  <!-- Cercle turquoise avec texte et icônes, maintenant au-dessus des boutons -->
   <div class="feedback-circle">
     <p>Que changeriez-vous dans ces pages pour rendre une future plateforme de commercialisation de vos produits agricoles, facile à utiliser ?</p>
     <p>Cliquez sur les icônes pour me contacter ou me connaître.</p>
@@ -116,7 +114,7 @@
     </div>
   </div>
   
-  <!-- Boutons restaurés -->
+  <!-- Boutons -->
   <div class="links">
     <a href="attributs_tous.html" class="recherche-button">🔍 Recherche</a>
     <a href="commandes.html">Commandes</a>
